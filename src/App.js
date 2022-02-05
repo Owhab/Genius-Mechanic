@@ -11,6 +11,7 @@ import Booking from "./Pages/Booking/Booking/Booking";
 import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Contexts/AuthProvider";
 import Profile from "./Pages/Profile/Profile";
+import PrivateRoute from "./Pages/Login/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -20,14 +21,28 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="home" element={<Home />} />
             <Route path="services" element={<Services />} />
             <Route path="experts" element={<Experts />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="login" element={<Login />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="booking/:serviceId" element={<Booking />} />
+            <Route
+              path="profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="booking/:serviceId"
+              element={
+                <PrivateRoute>
+                  <Booking />
+                </PrivateRoute>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

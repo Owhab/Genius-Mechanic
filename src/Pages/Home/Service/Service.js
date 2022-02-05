@@ -17,11 +17,10 @@ const Service = ({ service }) => {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description.slice(0, 250)}</Card.Text>
       </Card.Body>
-      <Card.Footer className="">
-        <Link to={`/booking/${id}`}>
-          <button className="btn btn-warning">Get this service</button>
-        </Link>
-      </Card.Footer>
+
+      <Link className="pb-2" to={`/booking/${id}`}>
+        <button className="btn btn-warning">Get this service</button>
+      </Link>
     </Card>
   );
 };

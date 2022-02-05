@@ -13,7 +13,7 @@ const Profile = () => {
         style={{ width: "20vw", height: "30vh" }}
         src={user.photoURL}
         alt=""
-      />{" "}
+      />
       <br /> <br />
       <button className="btn btn-light" onClick={logOut}>
         Log Out
