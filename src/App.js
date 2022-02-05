@@ -8,23 +8,30 @@ import Contact from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
 import Header from "./Pages/Home/Header/Header";
 import Booking from "./Pages/Booking/Booking/Booking";
+import Login from "./Pages/Login/Login/Login";
+import AuthProvider from "./Contexts/AuthProvider";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="services" element={<Services />} />
-          <Route path="experts" element={<Experts />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="booking/:serviceId" element={<Booking />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="services" element={<Services />} />
+            <Route path="experts" element={<Experts />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="login" element={<Login />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="booking/:serviceId" element={<Booking />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
