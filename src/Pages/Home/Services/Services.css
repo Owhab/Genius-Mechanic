@@ -1,0 +1,19 @@
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 10px;
+}
+/* Responsive for Mobile Device */
+@media only screen and (max-width: 688px) {
+  .service-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Responsive for Tablet */
+@media only screen and (max-width: 992px) and (min-width: 689px) {
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
