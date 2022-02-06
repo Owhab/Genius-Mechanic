@@ -21,3 +21,5 @@
 - React Router Dom
 - Dynamic Routing
 - On Auth State Change Authentication
+- Firebase for Authentication
+- Firbase Hosting for hosting
